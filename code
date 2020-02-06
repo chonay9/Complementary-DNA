@@ -1,0 +1,30 @@
+package dna
+
+fun makeComplement(dna : String) : String {
+    return dna.map({
+        when(it){
+            'A' -> 'T'
+            'T' -> 'A'
+            'C' -> 'G'
+            else -> 'C'
+            }
+         }).joinToString("");
+ }
+ 
+ //******************************TDD*********************
+ package dna
+
+import kotlin.test.assertEquals
+import org.junit.Test
+
+class TestExample {
+  @Test
+    fun test01() {
+       assertEquals("TTTT", makeComplement("AAAA"));
+    }
+    @Test
+    fun test02() {
+       assertEquals("TAACG", makeComplement("ATTGC"));
+    }
+     
+}
